@@ -1,0 +1,17 @@
+declare @tz varchar (8) = '38819405'
+select ((case when (substring(@tz,1,1)*1>9) then cast (( left(substring(@tz,1,1)*1 ,1) ) as int) + cast
+(( right(substring(@tz,1,1)*1 ,1) ) as int) else (substring(@tz,1,1)*1) end +
+case when (substring(@tz,2,1)*2>9) then cast (( left(substring(@tz,2,1)*2 ,1) ) as int) + cast
+(( right(substring(@tz,2,1)*2 ,1) ) as int) else (substring(@tz,2,1)*2) end +
+case when (substring(@tz,3,1)*1>9) then cast (( left(substring(@tz,3,1)*1 ,1) ) as int) + cast
+(( right(substring(@tz,3,1)*1 ,1) ) as int) else (substring(@tz,3,1)*1) end +
+case when (substring(@tz,4,1)*2>9) then cast (( left(substring(@tz,4,1)*2 ,1) ) as int) + cast
+(( right(substring(@tz,4,1)*2 ,1) ) as int) else (substring(@tz,4,1)*2) end +
+case when (substring(@tz,5,1)*1>9) then cast (( left(substring(@tz,5,1)*1 ,1) ) as int) + cast
+(( right(substring(@tz,5,1)*1 ,1) ) as int) else (substring(@tz,5,1)*1) end +
+case when (substring(@tz,6,1)*2>9) then cast (( left(substring(@tz,6,1)*2 ,1) ) as int) + cast
+(( right(substring(@tz,6,1)*2 ,1) ) as int) else (substring(@tz,6,1)*2) end +
+case when (substring(@tz,7,1)*1>9) then cast (( left(substring(@tz,7,1)*1 ,1) ) as int) + cast
+(( right(substring(@tz,7,1)*1 ,1) ) as int) else (substring(@tz,7,1)*1) end +
+case when (substring(@tz,8,1)*2>9) then cast (( left(substring(@tz,8,1)*2 ,1) ) as int) + cast
+(( right(substring(@tz,8,1)*2 ,1) ) as int) else (substring(@tz,8,1)*2) end ) % 10 - 10) *(-1)
